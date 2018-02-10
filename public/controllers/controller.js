@@ -1,7 +1,9 @@
 var myApp = angular.module("myApp", ["ngRoute"])
-.config(function($routeProvider, $locationProvider){
-  $locationProvider.hashPrefix('');
+.config(function($routeProvider){
   $routeProvider
+  .when("/", {
+    templateUrl: "templates/main.html"
+  })
   .when("/register", {
     templateUrl: "templates/register.html",
     controller: "AppCtrl"
@@ -10,16 +12,12 @@ var myApp = angular.module("myApp", ["ngRoute"])
     templateUrl: "templates/users.html",
     controller: "AppCtrl"
   });
-
-  $locationProvider.html5Mode({
-    enabled: true,
-    requireBase: false
-  });
 });
+
 
 myApp.controller("AppCtrl", ["$scope", "$http", function($scope, $http) {
 
-  $scope.sortType = 'ettevotteNimi';
+  $scope.sortType = "company";
   $scope.sortReverse = false;
 
   var refresh = function() {
@@ -48,11 +46,11 @@ myApp.controller("AppCtrl", ["$scope", "$http", function($scope, $http) {
     $http.delete("/userList" + id).then(successCallback, failCallback);
 
     function successCallback(res){
-      console.log("lol");
+      console.log(res);
     };
 
     function failCallback(err){
-      console.log("lo2l");
+      console.log(err);
     };
 
     refresh();

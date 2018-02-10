@@ -11,7 +11,7 @@
       </div>
       <label for="nimi">Nimi:</label>
       <input type="text" class="form-control" id="nimi" ng-model="user.nimi" required/>
-      <label for="vanus">Vanus: <span id="range-slider-number"></span></label>
+      <label for="vanus">Vanus: <span id="range-slider-number">50</span></label>
       <input type="range" min="0" max="100" value="50" step="1" oninput="sliderChange(this.value)" class="form-control" id="vanus" ng-model="user.vanus" required/>
       <label for="email">E-mail:</label>
       <input type="email" class="form-control" id="email" ng-model="user.email" required/>
