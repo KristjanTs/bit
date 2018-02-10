@@ -17,8 +17,11 @@ var myApp = angular.module("myApp", ["ngRoute"])
 
 myApp.controller("AppCtrl", ["$scope", "$http", function($scope, $http) {
 
-  $scope.sortType = "company";
+  $scope.sortType = "ettevotteNimi";
   $scope.sortReverse = false;
+
+  $scope.sortType2 = "nimi";
+  $scope.sortReverse2 = false;
 
   var refresh = function() {
     $http.get("/userList").then(successCallback, failCallback);
@@ -42,7 +45,6 @@ myApp.controller("AppCtrl", ["$scope", "$http", function($scope, $http) {
   };
 
   $scope.removeUser = function(id) {
-    console.log(id);
     $http.delete("/userList" + id).then(successCallback, failCallback);
 
     function successCallback(res){

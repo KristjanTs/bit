@@ -1,23 +1,28 @@
-<div class="container register-container">
-<h2 class="text-center">Sign up form</h2>
-  <form ng-submit="addUser()">
-    <div class="form-group">
-      <label class="checkbox-inline">Ettevõte: <input type="checkbox" id="company" value="" ng-model="user.company"></label><br /><br />
-      <div class="for-companies">
-        <label for="ettevotteNimi">Ettevõtte nimi:</label>
-        <input type="text" class="form-control" id="ettevotteNimi" ng-model="user.ettevotteNimi"/>
-        <label for="regKood">Ettevõtte registrikood:</label>
-        <input type="text" class="form-control" id="regKood" ng-model="user.regKood"/>
-      </div>
-      <label for="nimi">Nimi:</label>
-      <input type="text" class="form-control" id="nimi" ng-model="user.nimi" required/>
-      <label for="vanus">Vanus: <span id="range-slider-number">50</span></label>
-      <input type="range" min="0" max="100" value="50" step="1" oninput="sliderChange(this.value)" class="form-control" id="vanus" ng-model="user.vanus" required/>
-      <label for="email">E-mail:</label>
-      <input type="email" class="form-control" id="email" ng-model="user.email" required/>
-      <label for="parool">Parool:</label>
-      <input type="password" class="form-control" id="parool" ng-model="user.parool" required/>
-    </div>
-    <input type="submit" value="Registreeri" class="btn btn-primary text-center" />
-  </form>
+<div class="container-fluid"><br />
+  <div class="container register-container">
+      <h2 class="text-center">Registreerimine</h2>
+        <form ng-submit="addUser()">
+          <div class="form-group">
+            <label class="checkbox-inline">Ettevõte: <input type="checkbox" id="company" value="" ng-model="user.company"></label><br /><br />
+            <div class="for-companies">
+              <label for="ettevotteNimi">Ettevõtte nimi:</label>
+              <input type="text" class="form-control" id="ettevotteNimi" ng-model="user.ettevotteNimi"/>
+              <label for="regKood">Ettevõtte registrikood:</label>
+              <input type="text" class="form-control" id="regKood" ng-model="user.regKood"/>
+            </div>
+            <label for="nimi">Nimi:</label>
+            <input type="text" class="form-control" id="nimi" ng-model="user.nimi" required/>
+            <label for="vanus">Vanus: <span id="range-slider-number">50</span></label>
+            <input type="range" min="0" max="100" value="50" step="1" oninput="sliderChange(this.value)" class="form-control" id="vanus" ng-model="user.vanus" required/>
+            <label for="email">E-mail:</label>
+            <input type="email" class="form-control" id="email" ng-model="user.email" required/>
+            <label for="parool">Parool:</label>
+            <input type="password" class="form-control" id="parool" ng-model="user.parool" required/>
+          </div>
+          <div class="text-center">
+            <input type="submit" value="Registreeri" class="btn btn-primary" />
+            <input type="submit" value="Registreeri" id="readMore" />
+          </div>
+        </form>
+  </div>
 </div>

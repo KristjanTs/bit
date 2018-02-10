@@ -3,6 +3,11 @@ var app = express();
 var mongojs = require("mongojs");
 var db = mongojs("mongodb://kristjan:kristjan12345@ds012058.mlab.com:12058/bit", ["users"]);
 var bodyParser = require("body-parser");
+var less = require('less');
+var expressLess = require('express-less');
+
+var app = express();
+app.use('/style', expressLess(__dirname + '/public/less'));
 
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
@@ -23,7 +28,7 @@ app.post("/userList", function(req, res) {
 
 app.delete("/userList:id", function(req, res){
   var id = req.params.id;
-  db.collection("users").deleteOne({_id: mongojs.ObjectId(id)}, function(err, doc){
+  db.collection("users").remove({_id: mongojs.ObjectId(id)}, function(err, doc){
     res.json(doc);
   });
 });
