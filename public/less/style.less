@@ -6,37 +6,50 @@ body, html {
   height: 100%;
 }
 
+//Register view css
 .container-fluid {
   background: linear-gradient(grey, @main-color);
   height: 100%;
-}
 
-.container {
-  margin-top: 30px;
-}
-
-.register-container {
-  width: 70%;
-  border-radius: 5px;
-  background-color: white;
-  padding: 20px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-  &:hover {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  }
-  h2 {
-    color: darken(@main-color, 20%);
+  .container {
+    margin-top: 15px;
   }
 
-}
-
-@media only screen and (max-width: 500px) {
   .register-container {
-      width: 95%;
+    width: 70%;
+    border-radius: 5px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    &:hover {
+      box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    }
+    h2 {
+      color: darken(@main-color, 20%);
+    }
+
   }
-  .main {
-    width: 95%;
+  .form-control:focus {
+    border-color: @main-color;
+    box-shadow: inset 0 1px 1px @main-color, 0 0 8px @main-color;
+  }
+
+  .btn-primary {
+    background-color: @main-color !important;
+    border-color: @main-color !important;
+    box-shadow: 2px 2px 2px 2px @dark-grey !important;
+
+    &:hover, &:visited, &:focus {
+      background-color: @main-color !important;
+      border-color: @main-color !important;
+      box-shadow: 2px 2px 2px 2px @dark-grey !important;
+    }
+    &:active{
+      background-color: @main-color !important;
+      border-color: @main-color !important;
+      box-shadow: 1px 1px 1px 1px @dark-grey !important;
+    }
   }
 }
 
@@ -44,6 +57,7 @@ body, html {
   margin-left: 10px;
 }
 
+//navbar css
 .navbar {
   background-color: #ffffff;
   border-color: #ffffff;
@@ -105,23 +119,7 @@ body, html {
   }
 }
 
-.btn-primary {
-  background-color: @main-color !important;
-  border-color: @main-color !important;
-  box-shadow: 2px 2px 2px 2px @dark-grey !important;
-
-  &:hover, &:visited, &:focus {
-    background-color: @main-color !important;
-    border-color: @main-color !important;
-    box-shadow: 2px 2px 2px 2px @dark-grey !important;
-  }
-  &:active{
-    background-color: @main-color !important;
-    border-color: @main-color !important;
-    box-shadow: 1px 1px 1px 1px @dark-grey !important;
-  }
-}
-
+//Main page css
 .main {
   h1 {
     color: @main-color;
@@ -143,6 +141,7 @@ body, html {
 }
 
 
+//Users view css
 .users {
   h2 {
     color: darken(@main-color, 20%);
@@ -165,7 +164,12 @@ body, html {
   }
 }
 
-.form-control:focus {
-  border-color: @main-color;
-  box-shadow: inset 0 1px 1px @main-color, 0 0 8px @main-color;
+//Mobile view css
+@media only screen and (max-width: 500px) {
+  .register-container {
+      width: 95%;
+  }
+  .main {
+    width: 95%;
+  }
 }
